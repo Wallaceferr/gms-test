@@ -6,6 +6,10 @@ describe('US-001 Funcionalidade: Busca de Filmes', () => {
         cy.visit('/')
     })
 
+    afterEach(() => {
+        cy.screenshot()
+    })
+
     it('Deve buscar filme com sucesso', () => {
         cy.get('#search-input').type('Interstellar')
         cy.get('#search-button').click()
@@ -20,7 +24,7 @@ describe('US-001 Funcionalidade: Busca de Filmes', () => {
         })
     })
 
-    it.only('Deve buscar filme com sucesso de uma lista inteira', () => {
+    it('Deve buscar filme com sucesso de uma lista inteira', () => {
         cy.fixture('filmes').each((filmes) =>{
             cy.get('#search-input').clear().type(filmes.titulo)
             cy.get('#search-button').click()
