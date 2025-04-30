@@ -13,7 +13,7 @@ describe('US-001 Funcionalidade: Busca de Filmes', () => {
     it('Deve buscar filme com sucesso', () => {
         cy.get('#search-input').type('Interstellar')
         cy.get('#search-button').click()
-        cy.get('#results-section').should('contain','Interstellaraes')
+        cy.get('#results-section').should('contain','Interstellar')
     })
 
     it('Deve buscar filme com sucesso de uma lista', () => {
